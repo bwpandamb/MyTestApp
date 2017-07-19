@@ -2,17 +2,12 @@ package com.example.achar.mytestapp;
 
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,19 +41,26 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            if (resultCode == 1) {
+            if (requestCode == 1) {
                 Uri uri = data.getData();
                 ContentResolver cr = this.getContentResolver();
-                try {
-                    Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
-                    if (bitmap != null) {
-                        iv.setImageBitmap(bitmap);
-                    }
-                    /* 将Bitmap设定到ImageView */
 
-                } catch (FileNotFoundException e) {
-                    Log.e("Exception", e.getMessage(),e);
-                }
+                //可以选择这样直接设置图片
+                iv.setImageURI(data.getData());
+
+                //也可以这样把图片通过流和内容解析者转化为bitmap
+//                try {
+//                    Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+//                    if (bitmap != null) {
+//                        iv.setImageBitmap(bitmap);
+//
+////                        iv.setImageURI(data.getData());
+////                    }
+//                    /* 将Bitmap设定到ImageView */
+//                    }
+//                } catch (FileNotFoundException e) {
+//                    Log.e("Exception", e.getMessage(),e);
+//                }
             }
             super.onActivityResult(requestCode, resultCode, data);
         }
