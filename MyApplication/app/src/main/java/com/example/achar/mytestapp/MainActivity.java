@@ -1,67 +1,68 @@
 package com.example.achar.mytestapp;
 
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+
+import com.example.achar.mytestapp.ClickForLocalPhoto.ClickForCarmeraActivity;
+import com.example.achar.mytestapp.ForLearnEnum.ShowEnumActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView iv;
-    private Button btn;
+    @BindView(R.id.btn1)
+    Button btn1;
+    @BindView(R.id.btn2)
+    Button btn2;
+    @BindView(R.id.btn3)
+    Button btn3;
+    @BindView(R.id.btn4)
+    Button btn4;
+    @BindView(R.id.btn5)
+    Button btn5;
+    @BindView(R.id.btn6)
+    Button btn6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn = (Button) findViewById(R.id.btn);
-        iv = (ImageView) findViewById(R.id.iv);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                /* 开启Pictures画面Type设定为image */
-                intent.setType("image/*");
-                /* 使用Intent.ACTION_GET_CONTENT这个Action */
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                /* 取得相片后返回本画面 */
-                startActivityForResult(intent, 1);
-
-            }
-        });
+        ButterKnife.bind(this);
+        btn1.setText("图片获取与设置");
+        btn2.setText("枚举");
 
 
     }
 
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            if (requestCode == 1) {
-                Uri uri = data.getData();
-                ContentResolver cr = this.getContentResolver();
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn1:
+                startActivityByAcitvityName(ClickForCarmeraActivity.class);
+                break;
+            case R.id.btn2:
+                startActivityByAcitvityName(ShowEnumActivity.class);
+                break;
+            case R.id.btn3:
 
-                //可以选择这样直接设置图片
-                iv.setImageURI(data.getData());
-
-                //也可以这样把图片通过流和内容解析者转化为bitmap
-//                try {
-//                    Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
-//                    if (bitmap != null) {
-//                        iv.setImageBitmap(bitmap);
-//
-////                        iv.setImageURI(data.getData());
-////                    }
-//                    /* 将Bitmap设定到ImageView */
-//                    }
-//                } catch (FileNotFoundException e) {
-//                    Log.e("Exception", e.getMessage(),e);
-//                }
-            }
-            super.onActivityResult(requestCode, resultCode, data);
+                break;
+            case R.id.btn4:
+                break;
+            case R.id.btn5:
+                break;
+            case R.id.btn6:
+                break;
         }
+    }
+
+    private void startActivityByAcitvityName(Class<?> className) {
+        Intent intent = new Intent(MainActivity.this, className);
+        startActivity(intent);
+    }
+
 }
