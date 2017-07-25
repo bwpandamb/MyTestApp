@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.achar.mytestapp.retrofit.RetrofitActivity">
+
+    <Button
+        android:id="@+id/btnR1"
+        android:layout_width="368dp"
+        android:layout_height="66dp"
+        android:text="点击请求网络"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <Button
+        android:id="@+id/btnR2"
+        android:layout_width="368dp"
+        android:layout_height="66dp"
+        android:text="点击请求网络"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="142dp" />
+
+    </ScrollView>
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.achar.mytestapp.ClickForLocalPhoto.ClickForCarmeraActivity;
 import com.example.achar.mytestapp.ForLearnEnum.ShowEnumActivity;
+import com.example.achar.mytestapp.retrofit.RetrofitActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         btn1.setText("图片获取与设置");
         btn2.setText("枚举");
+        btn3.setText("retrofit 网络请求");
 
 
     }
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityByAcitvityName(ShowEnumActivity.class);
                 break;
             case R.id.btn3:
-
+                startActivityByAcitvityName(RetrofitActivity.class);
                 break;
             case R.id.btn4:
                 break;

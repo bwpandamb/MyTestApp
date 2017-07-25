@@ -22,6 +22,7 @@ public class ShowEnumActivity extends AppCompatActivity {
 
 
         TypeEnum audio = TypeEnum.TEXT;
+
         System.out.println("mbmb" + audio.getValue());
         System.out.println("mbmb" + audio.getName());
         System.out.println("mbmb" + audio.getByValue(1));

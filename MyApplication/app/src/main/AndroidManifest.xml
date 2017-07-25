@@ -3,6 +3,7 @@
     package="com.example.achar.mytestapp">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClickForLocalPhoto.ClickForCarmeraActivity" />
-        <activity android:name=".ForLearnEnum.ShowEnumActivity"></activity>
+        <activity android:name=".ForLearnEnum.ShowEnumActivity" />
+        <activity android:name=".retrofit.RetrofitActivity"></activity>
     </application>
-
-
 
 </manifest>
