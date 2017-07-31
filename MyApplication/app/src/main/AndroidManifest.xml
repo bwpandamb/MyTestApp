@@ -21,7 +21,10 @@
         </activity>
         <activity android:name=".ClickForLocalPhoto.ClickForCarmeraActivity" />
         <activity android:name=".ForLearnEnum.ShowEnumActivity" />
-        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".retrofit.RetrofitActivityForWeather" />
+        <activity android:name=".retrofit.RetrofitActivityForTranslate" />
+        <activity android:name=".rxjava.RxjavaActivity" />
+        <activity android:name=".PATTest"></activity>
     </application>
 
 </manifest>

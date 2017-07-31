@@ -8,7 +8,8 @@ import android.widget.Button;
 
 import com.example.achar.mytestapp.ClickForLocalPhoto.ClickForCarmeraActivity;
 import com.example.achar.mytestapp.ForLearnEnum.ShowEnumActivity;
-import com.example.achar.mytestapp.retrofit.RetrofitActivity;
+import com.example.achar.mytestapp.retrofit.RetrofitActivityForWeather;
+import com.example.achar.mytestapp.rxjava.RxjavaActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btn1.setText("图片获取与设置");
         btn2.setText("枚举");
         btn3.setText("retrofit 网络请求");
+        btn4.setText("测试JSON的读写");
+        btn5.setText("PAT测试题和ET的输入约束");
 
 
     }
@@ -51,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivityByAcitvityName(ShowEnumActivity.class);
                 break;
             case R.id.btn3:
-                startActivityByAcitvityName(RetrofitActivity.class);
+                startActivityByAcitvityName(RetrofitActivityForWeather.class);
                 break;
             case R.id.btn4:
+                startActivityByAcitvityName(RxjavaActivity.class);
                 break;
             case R.id.btn5:
+                startActivityByAcitvityName(PATTest.class);
                 break;
             case R.id.btn6:
                 break;
